@@ -1,17 +1,17 @@
-import board
-import neopixel
-import touchio
+# import board
+# import neopixel
 
-from util import ActiveBoard, ColorNameAnimation
+from util import ActiveBoard, ColorNameAnimation, StormAnimation
 
 
 def main():
-    touch = touchio.TouchIn(board.TOUCH1)
-    pixels = neopixel.NeoPixel(board.NEOPIXEL, 4)
-
-    ab = ActiveBoard(pixels)
+    # pixels = neopixel.NeoPixel(board.NEOPIXEL, 4)
+    # ab = ActiveBoard(pixels)
+    ab = ActiveBoard(None)
 
     animation = ColorNameAnimation(["red", "blue", "purple", "green"], 3, 4)
+
+    animation = StormAnimation(10.0)
 
     ab.play_animation(animation)
 
